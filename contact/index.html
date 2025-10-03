@@ -12,6 +12,24 @@
         <a href="/contact/index.html">Contact</a>
         <a href="https://github.com/tachiu33333" target="_blank">GitHub</a>
     </nav>
-    <h1>Contact Me</h1>
+    <h1>Contact</h1>
+    <form action="mailto:tachiu@ucsd.edu" method="POST" enctype="text/plain">
+        <label>
+            Email:
+            <input type="email" name="email" required>
+        </label>
+        <br>
+        <label>
+            Subject:
+            <input name="subject" required>
+        </label>
+        <br>
+        <label>
+            Message:
+            <textarea name="body" rows="5" required></textarea>
+        </label>
+        <br>
+        <button>Send</button>
+    </form>
 </body>
 </html>
