@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylor Chiu: Personal site and Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taylor Chiu: Personal site and Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects/index.html">Projects</a>
-        <a href="contact/index.html">Contact</a>
-        <a href="https://github.com/tachiu33333" target="_blank">GitHub</a>
-    </nav>
-    <h1>Taylor Chiu's portfolio</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-         Rerum aspernatur, quas omnis minus vitae velit corporis expedita explicabo hic totam?
-          Placeat veniam delectus tempora ipsam illum vel hic odio cumque?</p>
-    <img src="images/dog.jpg" alt="Taylor Chiu's Profile Picture" width="200" height="200"/>
-    <p>My lazy dog!</p>
+  <nav>
+    <a href="index.html" class="current">Home</a>
+    <a href="projects/index.html">Projects</a>
+    <a href="contact/index.html">Contact</a>
+    <a href="https://github.com/tachiu33333" target="_blank">GitHub</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="intro-text">
+        <h1>Taylor Chiu's portfolio</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Rerum aspernatur, quas omnis minus vitae velit corporis expedita explicabo hic totam?
+          Placeat veniam delectus tempora ipsam illum vel hic odio cumque?
+        </p>
+      </div>
+      <div class="intro-image">
+        <img src="images/dog.jpg" alt="Taylor Chiu's Profile Picture" class="profile-img" />
+        <p>My lazy dog!</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="highlight">
+      <h2>Welcome!</h2>
+      <p>
+        This portfolio showcases my projects, experiences, and experiments
+        across web development, AI, and data analysis.
+        Explore my work to learn more about what I build and how I think.
+      </p>
+      <a href="projects/index.html" class="button accent">View My Work</a>
+    </section>
+  </main>
 </body>
 </html>
-
