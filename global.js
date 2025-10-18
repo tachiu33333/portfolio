@@ -83,3 +83,20 @@ if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
     }
 }
+
+// Initialize EmailJS (replace 'YOUR_SERVICE_ID' and 'YOUR
+
+const form = document.getElementById('contact-form');
+form?.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const data = new FormData(form);
+    const params = new URLSearchParams();
+
+    for (let [name, value] of data) {
+        params.append(name, encodeURIComponent(value));
+    }
+
+    const mailtoUrl = `${form.action}?${params.toString()}`;
+    location.href = mailtoUrl; // Open the mail client with the prefilled fields
+});
