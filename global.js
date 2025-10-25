@@ -100,3 +100,41 @@ form?.addEventListener('submit', (event) => {
     const mailtoUrl = `${form.action}?${params.toString()}`;
     location.href = mailtoUrl; // Open the mail client with the prefilled fields
 });
+
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    console.log('Fetched JSON data:', data); // Debugging log
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  console.log('Rendering projects:', projects); // Debugging log
+  containerElement.innerHTML = '';
+  projects.forEach((project) => {
+    const article = document.createElement('article');
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+    containerElement.appendChild(article);
+  });
+}
+
+export async function fetchGitHubData(username) {
+  try {
+    const data = await fetchJSON(`https://api.github.com/users/${username}`);
+    console.log('GitHub API response:', data); // Debugging log
+    return data;
+  } catch (error) {
+    console.error('Error fetching GitHub data:', error);
+  }
+}

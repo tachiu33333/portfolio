@@ -53,8 +53,6 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     margin: 0;
-    padding: 2rem 1rem 6rem;
-    max-width: var(--max-width);
     animation: fadeIn 0.6s ease-in-out forwards;
 }
 
