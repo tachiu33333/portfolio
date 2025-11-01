@@ -130,6 +130,9 @@ nav a.current {
 
 /* Main Content */
 main {
+    /* Shrink width to 10% and center */
+    max-width: 80%;
+    margin: 0 auto;
     display: grid;
     gap: var(--spacing-unit);
 }
@@ -290,4 +293,59 @@ article, img, .button {
 
 p, ul, li {
     font-size: 1.35rem; /* 3/4 of the current size (1.8rem) */
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+}
+
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    padding: 1em;
+    border: 1px solid var(--color-muted);
+    border-radius: 0.5em;
+    background-color: var(--color-bg);
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.legend li .swatch {
+    width: 1em;
+    height: 1em;
+    background-color: var(--color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#projects-pie-plot path {
+    cursor: pointer;
+    transition: fill 300ms;
+}
+
+#projects-pie-plot path:hover {
+    opacity: 1; /* Ensure hover effect darkens */
+    filter: brightness(0.85); /* Darken on hover */
+}
+
+.searchBar {
+    margin: 1em 0;
+    padding: 0.5em;
+    width: 100%;
+    border: 1px solid var(--color-muted);
+    border-radius: 0.3em;
+    font-size: 1rem;
+}
+
+.bar-container {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: bold;
 }
