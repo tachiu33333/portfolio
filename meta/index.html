@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codebase Meta-Analysis</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../global.js" type="module" defer></script>
+  <script src="main.js" type="module" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Codebase Meta-Analysis</h1>
+    <p>Explore statistics and visualizations about the codebase.</p>
+  </header>
+  <main>
+    <section id="stats"></section>
+    <h2>Commits by Time of Day</h2>
+    <div id="chart"></div>
+
+    <!-- Tooltip for commit details -->
+    <dl id="commit-tooltip" class="info tooltip" hidden>
+      <dt>Commit</dt>
+      <dd><a href="" id="commit-link" target="_blank" rel="noopener"></a></dd>
+      <dt>Date</dt>
+      <dd id="commit-date"></dd>
+    </dl>
+
+    <p id="selection-count">No commits selected</p>
+    <dl id="language-breakdown" class="stats"></dl>
+  </main>
+</body>
+</html>

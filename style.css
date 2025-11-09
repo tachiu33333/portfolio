@@ -349,3 +349,112 @@ p, ul, li {
     color: var(--color-text);
     font-weight: bold;
 }
+
+/* Gridlines (light) */
+.gridlines line {
+    stroke: rgba(0, 0, 0, 0.06);
+    stroke-width: 1px;
+}
+.gridlines path {
+    display: none;
+}
+
+/* Tooltip */
+.info.tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: var(--color-article-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-muted);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.4rem;
+    z-index: 9999;
+    min-width: 12rem;
+    box-shadow: 0 0.3em 0.6em rgba(0,0,0,0.08);
+}
+
+/* Stats display */
+dl.stats {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em 1em;
+    margin: 1em 0;
+}
+
+dl.stats dt {
+    font-weight: 600;
+    color: var(--color-muted);
+}
+
+dl.stats dd {
+    margin: 0;
+}
+
+/* Tooltip styles */
+dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em 1em;
+    margin: 0;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+}
+
+dl.info dt {
+    font-weight: 600;
+    color: var(--color-muted);
+}
+
+dl.info dd {
+    margin: 0;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: var(--color-article-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-muted);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.4rem;
+    z-index: 9999;
+    min-width: 12rem;
+    box-shadow: 0 0.3em 0.6em rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Circle interactions */
+circle {
+    cursor: pointer;
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+circle:hover {
+    transform: scale(1.5);
+}
+
+circle.selected {
+    fill: #ff6b6b;
+}
+
+/* Brush selection */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
