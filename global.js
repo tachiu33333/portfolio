@@ -121,9 +121,14 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   containerElement.innerHTML = '';
   projects.forEach((project) => {
     const article = document.createElement('article');
+    // Handle relative image paths - if it doesn't start with http, prepend BASE_PATH
+    let imageSrc = project.image;
+    if (!imageSrc.startsWith('http')) {
+      imageSrc = BASE_PATH + imageSrc;
+    }
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
-      <img src="${project.image}" alt="${project.title}">
+      <img src="${imageSrc}" alt="${project.title}">
       <p>${project.description}</p>
     `;
     containerElement.appendChild(article);

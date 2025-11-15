@@ -137,6 +137,20 @@ main {
     gap: var(--spacing-unit);
 }
 
+/* Projects Grid Layout */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
 img {
     display: block;
     max-width: 37.5%; /* 5/8 of the current size (50%) */
@@ -184,7 +198,7 @@ article {
 }
 
 article img {
-    max-width: 25%; /* 5/8 of the current size (40%) */
+    max-width: 100%; /* Full width within article for grid layout */
     margin: 0.5rem auto; /* Reduced margin */
     border-radius: 0.3rem; /* Reduced border radius */
 }

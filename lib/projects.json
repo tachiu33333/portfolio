@@ -1,10 +1,9 @@
-
 [
   {
-    "title": "Lorem ipsum dolor",
-    "year": "2023",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, molestias!"
+    "title": "Boston Biking Analysis",
+    "year": "2025",
+    "image": "images/boston.png",
+    "description": "Created a geovisualization dashboard using Python, Dash, and Plotly to analyze biking patterns in Boston. Implemented interactive maps and charts to display data insights effectively."
   },
   {
     "title": "Dolor sit amet",

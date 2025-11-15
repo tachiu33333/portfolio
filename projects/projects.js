@@ -23,7 +23,11 @@ function renderProjects(filteredProjects, container, headingTag) {
     container.innerHTML = '';
     filteredProjects.forEach((project) => {
         const projectElement = document.createElement('article');
-        const imageSrc = project.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23f0f0f0"/%3E%3C/svg%3E';
+        // Handle relative image paths - if it doesn't start with http, prepend BASE_PATH
+        let imageSrc = project.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23f0f0f0"/%3E%3C/svg%3E';
+        if (!imageSrc.startsWith('http') && !imageSrc.startsWith('data:')) {
+            imageSrc = '../' + imageSrc;
+        }
         projectElement.innerHTML = `
             <${headingTag}>${project.title}</${headingTag}>
             <p>${project.description}</p>
