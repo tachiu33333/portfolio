@@ -450,6 +450,12 @@ circle {
     transform-box: fill-box;
 }
 
+@starting-style {
+    circle {
+        r: 0;
+    }
+}
+
 circle:hover {
     transform: scale(1.5);
 }
@@ -471,4 +477,79 @@ circle.selected {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
+}
+
+/* Unit visualization for files */
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-top: 2rem;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+#files dt code {
+  display: block;
+}
+
+#files dt small {
+  display: block;
+  font-size: 0.7em;
+  opacity: 0.7;
+  margin-top: 0.2em;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
+/* Scrollytelling layout */
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-story .step {
+  padding-bottom: 50vh;
+  margin-bottom: 1rem;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
 }

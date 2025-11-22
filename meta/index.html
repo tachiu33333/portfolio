@@ -15,19 +15,30 @@
   </header>
   <main>
     <section id="stats"></section>
+    <div style="display: flex; align-items: baseline; flex: 1; margin-bottom: 1rem;">
+      <label style="display: flex; align-items: baseline; flex: 1;">
+        Show commits until:
+        <input type="range" id="commit-progress" min="0" max="100" value="100" style="flex: 1; margin: 0 1rem;" />
+        <time id="commit-time" style="margin-left: auto;"></time>
+      </label>
+    </div>
     <h2>Commits by Time of Day</h2>
-    <div id="chart"></div>
-
-    <!-- Tooltip for commit details -->
-    <dl id="commit-tooltip" class="info tooltip" hidden>
-      <dt>Commit</dt>
-      <dd><a href="" id="commit-link" target="_blank" rel="noopener"></a></dd>
-      <dt>Date</dt>
-      <dd id="commit-date"></dd>
-    </dl>
-
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+    <div id="scrolly-1">
+      <div id="scatter-story"></div>
+      <div id="scatter-plot">
+        <div id="chart"></div>
+        <!-- Tooltip for commit details -->
+        <dl id="commit-tooltip" class="info tooltip" hidden>
+          <dt>Commit</dt>
+          <dd><a href="" id="commit-link" target="_blank" rel="noopener"></a></dd>
+          <dt>Date</dt>
+          <dd id="commit-date"></dd>
+        </dl>
+        <p id="selection-count">No commits selected</p>
+        <dl id="language-breakdown" class="stats"></dl>
+      </div>
+    </div>
+    <dl id="files"></dl>
   </main>
 </body>
 </html>
